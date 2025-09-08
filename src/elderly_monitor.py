@@ -5,18 +5,37 @@ Integrates all components for comprehensive monitoring
 
 import json
 import logging
-import argparse
 import schedule
 import time
-from datetime import datetime, date as date_cls
+from datetime import datetime
 from typing import Dict, List, Optional
 from pathlib import Path
 import json as _json
+import os
 
 # Import our custom modules
 from daily_tracker import DailyUsageTracker
 from alert_system import AlertSystem
 from anomaly_tool import detect_anomaly
+
+# ===== Bedrock / Knowledge Base Environment =====
+# Ensure region, KB id, and role are visible to the Bedrock tools (retrieve)
+os.environ.setdefault("AWS_REGION", "us-east-1")
+os.environ.setdefault("AWS_DEFAULT_REGION", "us-east-1")
+os.environ.setdefault("BEDROCK_REGION", "us-east-1")
+
+os.environ["KNOWLEDGE_BASE_ID"] = "GKRKOT1TME"
+os.environ["BEDROCK_KNOWLEDGE_BASE_ID"] = "GKRKOT1TME"
+
+# If your KB access uses an execution role, expose it as well
+os.environ.setdefault(
+    "KNOWLEDGE_BASE_ROLE_ARN",
+    "arn:aws:iam::805455449713:role/service-role/AmazonBedrockExecutionRoleForKnowledgeBase_lqx5d",
+)
+os.environ.setdefault(
+    "BEDROCK_KNOWLEDGE_BASE_ROLE_ARN",
+    "arn:aws:iam::805455449713:role/service-role/AmazonBedrockExecutionRoleForKnowledgeBase_lqx5d",
+)
 
 # Configure logging
 logging.basicConfig(
@@ -277,17 +296,13 @@ class ElderlyMonitor:
             from strands_tools import retrieve
             from strands.models.bedrock import BedrockModel
             from anomaly_tool import detect_anomaly
-            import os
-            from detect_kb import detect_anomaly_with_kb
             
             # Set up Bedrock model
             bedrock_model = BedrockModel(
-                model_id="amazon.nova-premier-v1:0",
+                model_id="arn:aws:bedrock:us-east-1:805455449713:inference-profile/us.amazon.nova-premier-v1:0",
                 temperature=0.2
             )
-            
-            # Set Knowledge Base ID
-            os.environ["KNOWLEDGE_BASE_ID"] = "GKRKOT1TME"
+        
             
             # System prompt for elderly monitoring
             system_prompt = """
@@ -349,7 +364,7 @@ class ElderlyMonitor:
             
             # Initialize agent
             agent = Agent(
-                tools=[retrieve, detect_anomaly_with_kb], 
+                tools=[retrieve, detect_anomaly], 
                 model=bedrock_model,
                 system_prompt=system_prompt
             )
@@ -775,112 +790,3 @@ class _KnowledgeBaseCoreMemory(_CoreMemory):
             "dashboard_file": dashboard_file,
             "export_timestamp": datetime.now().isoformat()
         }
-    
-    def run_example_scenarios(self):
-        """Run example monitoring scenarios"""
-        logger.info("Running example monitoring scenarios...")
-        
-        scenarios = [
-            {
-                "resident_id": "RES001",
-                "electricity_kwh": 15.0,
-                "gas_kwh": 5.0,
-                "dwelling_type": "3-room",
-                "region": "North East Region",
-                "description": "Ang Mo Kio",
-                "notes": "Normal usage pattern"
-            },
-            {
-                "resident_id": "RES002",
-                "electricity_kwh": 2.0,  # Very low - should trigger alert
-                "gas_kwh": 0.5,  # Very low - should trigger alert
-                "dwelling_type": "3-room",
-                "region": "North East Region",
-                "description": "Ang Mo Kio",
-                "notes": "Potential emergency - extremely low usage"
-            },
-            {
-                "resident_id": "RES003",
-                "electricity_kwh": 50.0,  # High - should trigger alert
-                "gas_kwh": 15.0,  # High - should trigger alert
-                "dwelling_type": "1-room / 2-room",
-                "region": "Central Region",
-                "description": "Bishan",
-                "notes": "Unusual high usage pattern"
-            }
-        ]
-        
-        for i, scenario in enumerate(scenarios, 1):
-            logger.info(f"Running scenario {i}: {scenario['notes']}")
-            result = self.add_usage_reading(**scenario)
-            logger.info(f"Scenario {i} result: {result['alert_count']} alerts created")
-        
-        # Get final dashboard
-        dashboard = self.get_monitoring_dashboard()
-        logger.info(f"Final dashboard: {dashboard['alert_summary']['total_alerts']} total alerts")
-        
-        return dashboard
-
-
-def main():
-    """Main function for command-line usage"""
-    parser = argparse.ArgumentParser(description="Elderly Home Monitoring System")
-    parser.add_argument("--config", help="Configuration file path")
-    parser.add_argument("--scenarios", action="store_true", help="Run example scenarios")
-    parser.add_argument("--monitor", action="store_true", help="Start continuous monitoring")
-    parser.add_argument("--dashboard", action="store_true", help="Show dashboard")
-    parser.add_argument("--export", help="Export data to directory")
-    parser.add_argument("--interval", type=int, help="Monitoring interval in minutes")
-    
-    args = parser.parse_args()
-    
-    # Initialize monitor
-    monitor = ElderlyMonitor(args.config)
-    
-    if args.scenarios:
-        monitor.run_example_scenarios()
-    
-    elif args.monitor:
-        monitor.start_monitoring(args.interval)
-    
-    elif args.dashboard:
-        dashboard = monitor.get_monitoring_dashboard()
-        print(json.dumps(dashboard, indent=2))
-    
-    elif args.export:
-        results = monitor.export_data(args.export)
-        print(f"Data exported to {args.export}:")
-        print(json.dumps(results, indent=2))
-    
-    else:
-        # Interactive mode
-        print("Elderly Home Monitoring System")
-        print("1. Run example scenarios")
-        print("2. Show dashboard")
-        print("3. Add usage reading")
-        print("4. Start monitoring")
-        print("5. Export data")
-        
-        choice = input("Select option (1-5): ")
-        
-        if choice == "1":
-            monitor.run_example_scenarios()
-        elif choice == "2":
-            dashboard = monitor.get_monitoring_dashboard()
-            print(json.dumps(dashboard, indent=2))
-        elif choice == "3":
-            resident_id = input("Resident ID: ")
-            electricity = float(input("Electricity usage (kWh): "))
-            gas = float(input("Gas usage (kWh): "))
-            result = monitor.add_usage_reading(resident_id, electricity, gas)
-            print(json.dumps(result, indent=2))
-        elif choice == "4":
-            monitor.start_monitoring()
-        elif choice == "5":
-            output_dir = input("Output directory (default: exports): ") or "exports"
-            results = monitor.export_data(output_dir)
-            print(f"Data exported: {json.dumps(results, indent=2)}")
-
-
-if __name__ == "__main__":
-    main()

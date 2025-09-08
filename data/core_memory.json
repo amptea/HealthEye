@@ -1,11 +1,4 @@
 {
-  "snoozes": {
-    "RES001": {
-      "start_date": "2025-09-08",
-      "end_date": "2025-09-08",
-      "reason": "Staying with family for a week",
-      "set_at": "2025-09-08T17:12:39.226038"
-    }
-  },
+  "snoozes": {},
   "profiles": {}
 }

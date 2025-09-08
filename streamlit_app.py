@@ -18,6 +18,19 @@ def get_monitor() -> ElderlyMonitor:
     return st.session_state.monitor
 
 
+def _load_app_config() -> dict:
+    try:
+        import json
+        return json.loads(Path("config.json").read_text())
+    except Exception:
+        return {}
+
+
+def _save_app_config(cfg: dict) -> None:
+    import json
+    Path("config.json").write_text(json.dumps(cfg, indent=2))
+
+
 def page_analyze_single():
     st.header("Analyze Single Reading")
 
@@ -66,6 +79,73 @@ def page_analyze_single():
         st.json(result)
 
 
+
+
+def page_notification_settings():
+    st.header("Notification Settings (Email)")
+    cfg = _load_app_config()
+    email_cfg = cfg.get("email", {})
+    notif_cfg = cfg.get("notifications", {})
+
+    with st.form("email_settings_form"):
+        st.subheader("SMTP Configuration")
+        enable_notifications = st.checkbox(
+            "Enable email notifications (global)",
+            value=bool(notif_cfg.get("enable_email", True)),
+        )
+        email_enabled = st.checkbox(
+            "Enable SMTP sending (email.enabled)",
+            value=bool(email_cfg.get("enabled", False)),
+        )
+        smtp_server = st.text_input("SMTP server", value=email_cfg.get("smtp_server", "smtp.gmail.com"))
+        smtp_port = st.number_input("SMTP port", min_value=1, max_value=65535, value=int(email_cfg.get("smtp_port", 587)))
+        username = st.text_input("SMTP username", value=email_cfg.get("username", ""))
+        password = st.text_input("SMTP password / app password", type="password", value=email_cfg.get("password", ""))
+        from_addr = st.text_input("From address", value=email_cfg.get("from_address", ""))
+        to_addrs_str = st.text_area(
+            "To addresses (comma-separated)",
+            value=", ".join(email_cfg.get("to_addresses", [])),
+        )
+
+        saved = st.form_submit_button("Save Settings")
+
+    if saved:
+        cfg.setdefault("notifications", {})["enable_email"] = bool(enable_notifications)
+        cfg.setdefault("email", {})
+        cfg["email"]["enabled"] = bool(email_enabled)
+        cfg["email"]["smtp_server"] = smtp_server.strip()
+        cfg["email"]["smtp_port"] = int(smtp_port)
+        cfg["email"]["username"] = username.strip()
+        cfg["email"]["password"] = password
+        cfg["email"]["from_address"] = from_addr.strip()
+        to_list = [a.strip() for a in to_addrs_str.split(",") if a.strip()]
+        cfg["email"]["to_addresses"] = to_list
+        try:
+            _save_app_config(cfg)
+            # Reinitialize monitor so new settings load into AlertSystem
+            st.session_state.pop("monitor", None)
+            st.success("Email settings saved. Alert system will use these settings.")
+        except Exception as e:
+            st.error(f"Failed to save config: {e}")
+
+    st.divider()
+    st.subheader("Send Test Email")
+    st.caption("Creates a test critical alert which triggers an email send.")
+    if st.button("Send Test Alert Email"):
+        monitor = get_monitor()
+        try:
+            alert = monitor.alert_system.create_alert(
+                resident_id="RES-TEST",
+                dwelling_type="3-room",
+                region="North East Region",
+                description="Ang Mo Kio",
+                severity="critical",
+                message="Test email from HealthEye Streamlit",
+                recommendations=["This is a test alert email for demo"]
+            )
+            st.success(f"Triggered alert {alert.id}. Check inboxes in to_addresses.")
+        except Exception as e:
+            st.error(f"Failed to trigger test email: {e}")
 
 
 def page_alerts():
@@ -152,50 +232,6 @@ def page_snooze():
             st.error("No snooze found for this resident")
 
 
-def page_analysis_demo():
-    st.header("Analysis Process Demo")
-    st.caption("This demonstrates the two-step analysis process used by the agent.")
-    
-    st.subheader("Step 1: Knowledge Base Retrieval & Generation")
-    st.write("The agent uses retrieve and generate to ask:")
-    st.code("""
-    "What's the average monthly electricity usage for [dwelling_type] in [region], [description]?"
-    "What's the average monthly gas usage for [dwelling_type] in [region], [description]?"
-    """)
-    st.write("Then converts monthly averages to daily estimates (÷ 30) for comparison.")
-    
-    st.subheader("Step 2: Statistical Anomaly Detection")
-    st.write("The agent uses the detect_anomaly tool for detailed statistical analysis:")
-    st.code("""
-    - Z-score calculations
-    - Percentile analysis
-    - Elderly-specific thresholds
-    - Pattern recognition
-    """)
-    
-    st.subheader("Step 3: Consolidation & Decision")
-    st.write("The agent consolidates insights from BOTH sources:")
-    st.write("• **KB Retrieval**: Historical averages and trends")
-    st.write("• **Anomaly Detection**: Statistical validation")
-    st.write("• **Final Assessment**: Combined analysis for medical situation severity")
-    
-    st.subheader("Email Notifications (Demo)")
-    st.info("For critical situations, the agent will mention that it will email next of kin. This is for demonstration purposes only - no actual emails are sent.")
-    
-    if st.button("Create Demo Alert"):
-        monitor = get_monitor()
-        alert = monitor.alert_system.create_alert(
-            resident_id="RES-DEMO",
-            dwelling_type="3-room",
-            region="North East Region",
-            description="Ang Mo Kio",
-            severity="critical",
-            message="Demo alert - Agent will email next of kin for this critical situation",
-            recommendations=["This is a demonstration alert"]
-        )
-        st.success(f"Created {alert.id}. Agent would email next of kin for this critical situation.")
-
-
 def main():
     st.set_page_config(page_title="HealthEye - Elderly Monitoring", layout="wide")
     st.title("HealthEye - Elderly Home Monitoring")
@@ -206,7 +242,7 @@ def main():
             "Analyze Single Reading",
             "Alerts",
             "Resident Snooze",
-            "Analysis Process Demo",
+            "Notification Settings",
         ],
     )
 
@@ -216,8 +252,9 @@ def main():
         page_alerts()
     elif page == "Resident Snooze":
         page_snooze()
-    elif page == "Analysis Process Demo":
-        page_analysis_demo()
+    elif page == "Notification Settings":
+        page_notification_settings()
+    
 
 
 if __name__ == "__main__":

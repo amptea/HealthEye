@@ -72,8 +72,8 @@ class DailyUsageTracker:
             "dwelling_type": dwelling_type,
             "region": region,
             "description": description,
-            "electricity_per_month": electricity_kwh,
-            "gas_per_month": gas_kwh,
+            "electricity_per_day": electricity_kwh,
+            "gas_per_day": gas_kwh,
             "resident_id": resident_id,
             "notes": notes,
             "timestamp": datetime.now().isoformat()

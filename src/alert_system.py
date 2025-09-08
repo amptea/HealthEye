@@ -4,11 +4,14 @@ Handles different severity levels and notification channels
 """
 
 import json
+import smtplib
 import logging
 from datetime import datetime
 from typing import Dict, List, Optional
 from dataclasses import dataclass
 from enum import Enum
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -231,21 +234,51 @@ class AlertSystem:
         logger.critical(f"Recommendations: {'; '.join(alert.recommendations)}")
     
     def _send_email_notification(self, alert: Alert):
-        """Send email notification (Demo mode - just logs the action)"""
+        """Send email notification via SMTP when enabled in config."""
+        cfg = self.config
+        if not (cfg.get("notifications", {}).get("enable_email") and cfg.get("email", {}).get("enabled")):
+            return
         try:
-            logger.info(f"📧 DEMO: Would send email notification for alert {alert.id}")
-            logger.info(f"📧 DEMO: Subject: 🚨 {alert.severity.value.upper()} ALERT - Elderly Home Monitoring")
-            logger.info(f"📧 DEMO: To: Next of kin for resident {alert.resident_id}")
-            logger.info(f"📧 DEMO: Message: {alert.message}")
-            
-            # In a real implementation, this would send the actual email
-            # For now, we just mention it in the alert message
-            if not hasattr(alert, '_email_mentioned'):
-                alert.message += f" [DEMO: Next of kin will be notified via email]"
-                alert._email_mentioned = True
-            
+            email_cfg = cfg["email"]
+            from_addr = email_cfg.get("from_address", "")
+            to_addrs = email_cfg.get("to_addresses", []) or []
+            smtp_server = email_cfg.get("smtp_server", "smtp.gmail.com")
+            smtp_port = int(email_cfg.get("smtp_port", 587))
+            username = email_cfg.get("username", "")
+            password = email_cfg.get("password", "")
+
+            if not from_addr or not to_addrs:
+                logger.warning("Email enabled but from_address/to_addresses not configured; skipping send.")
+                return
+
+            subject = f"🚨 {alert.severity.value.upper()} ALERT - Elderly Home Monitoring ({alert.id})"
+            body = (
+                f"Alert ID: {alert.id}\n"
+                f"Resident: {alert.resident_id}\n"
+                f"Location: {alert.dwelling_type} in {alert.description}, {alert.region}\n"
+                f"Time: {alert.timestamp.strftime('%Y-%m-%d %H:%M:%S')}\n\n"
+                f"Message: {alert.message}\n\n"
+                f"Recommendations:\n- " + "\n- ".join(alert.recommendations)
+            )
+
+            msg = MIMEMultipart()
+            msg["From"] = from_addr
+            msg["To"] = ", ".join(to_addrs)
+            msg["Subject"] = subject
+            msg.attach(MIMEText(body, "plain"))
+
+            with smtplib.SMTP(smtp_server, smtp_port, timeout=15) as server:
+                try:
+                    server.starttls()
+                except Exception:
+                    pass
+                if username:
+                    server.login(username, password)
+                server.sendmail(from_addr, to_addrs, msg.as_string())
+
+            logger.info(f"📧 Sent email notification for alert {alert.id} to {to_addrs}")
         except Exception as e:
-            logger.error(f"Failed to process email notification for alert {alert.id}: {e}")
+            logger.error(f"Failed to send email notification for alert {alert.id}: {e}")
     
     def acknowledge_alert(self, alert_id: str, acknowledged_by: str) -> bool:
         """
