@@ -1,11 +1,18 @@
 import os
+import re
+from pathlib import Path
+from dotenv import load_dotenv
 from strands import Agent
 from strands_tools import retrieve
 from strands.models.bedrock import BedrockModel
 from anomaly_tool import detect_anomaly
 from daily_tracker import DailyUsageTracker
+from notify import send_email_via_ses
 
 import json
+
+# Load env from project root to ensure AWS/SES vars are available
+load_dotenv(dotenv_path=Path(__file__).resolve().parent.parent / ".env")
 
 # Bedrock model
 bedrock_model = BedrockModel(
@@ -71,7 +78,8 @@ def analyze_daily_usage(dwelling_type: str,
                        electricity_kwh: float,
                        gas_kwh: float,
                        date: str = None,
-                       resident_id: str = None) -> dict:
+                       resident_id: str = None,
+                       next_of_kin_email: str = None) -> dict:
     """
     Analyze daily usage for elderly resident
     
@@ -130,11 +138,94 @@ Provide your analysis in the specified JSON format with detailed statistics and 
     
     # Convert AgentResult to string for JSON serialization
     agent_response_str = str(agent_response) if hasattr(agent_response, '__str__') else str(agent_response)
+
+    # Try to parse JSON from the agent response
+    parsed_agent: dict = {}
+    try:
+        parsed_agent = json.loads(agent_response_str)
+    except Exception:
+        # Best-effort: sometimes models wrap JSON in text; try to extract braces
+        try:
+            start = agent_response_str.find('{')
+            end = agent_response_str.rfind('}')
+            if start != -1 and end != -1 and end > start:
+                parsed_agent = json.loads(agent_response_str[start:end+1])
+        except Exception:
+            parsed_agent = {}
+
+    # Extract severity/status with fallbacks
+    severity = ""
+    status = ""
+    if isinstance(parsed_agent, dict):
+        severity = (parsed_agent.get("severity") or parsed_agent.get("Severity") or "").lower()
+        status = (parsed_agent.get("status") or parsed_agent.get("Status") or "").lower()
+    if not severity:
+        # Regex fallback: find "severity": "..."
+        m = re.search(r'"severity"\s*:\s*"([a-zA-Z]+)"', agent_response_str, flags=re.IGNORECASE)
+        if m:
+            severity = m.group(1).lower()
+
+    # Determine recipient email (param overrides env)
+    recipient_email = next_of_kin_email or os.getenv("NEXT_OF_KIN_EMAIL")
+
+    email_result = None
+    if severity in {"high", "critical"}:
+        if not recipient_email:
+            print("Email NOT sent: NEXT_OF_KIN_EMAIL not provided.")
+        
+        # Build and send only if we have a recipient
+        if recipient_email:
+            subject = f"HealthEye Alert: {severity.capitalize()} usage anomaly detected"
+            html_body = f"""
+            <h2>HealthEye Alert</h2>
+            <p>A {severity} severity anomaly was detected for resident {resident_id or 'Unknown'}.</p>
+            <ul>
+              <li><b>Location</b>: {dwelling_type} in {description}, {region}</li>
+              <li><b>Date</b>: {date or 'Today'}</li>
+              <li><b>Electricity</b>: {electricity_kwh} kWh</li>
+              <li><b>Gas</b>: {gas_kwh} kWh</li>
+              <li><b>Status</b>: {status or 'n/a'}</li>
+            </ul>
+            <pre style='white-space:pre-wrap'>Reason: {parsed_agent.get('reason', 'Not provided') if isinstance(parsed_agent, dict) else 'Not provided'}</pre>
+            """
+            try:
+                email_result = send_email_via_ses(
+                    to_email=recipient_email,
+                    subject=subject,
+                    html_body=html_body,
+                )
+                print(f"Email send attempted. Result: {email_result}")
+            except Exception as e:
+                email_result = {"status": "error", "error": str(e)}
+                print(f"Email send failed: {email_result}")
+        subject = f"HealthEye Alert: {severity.capitalize()} usage anomaly detected"
+        html_body = f"""
+        <h2>HealthEye Alert</h2>
+        <p>A {severity} severity anomaly was detected for resident {resident_id or 'Unknown'}.</p>
+        <ul>
+          <li><b>Location</b>: {dwelling_type} in {description}, {region}</li>
+          <li><b>Date</b>: {date or 'Today'}</li>
+          <li><b>Electricity</b>: {electricity_kwh} kWh</li>
+          <li><b>Gas</b>: {gas_kwh} kWh</li>
+          <li><b>Status</b>: {status or 'n/a'}</li>
+        </ul>
+        <pre style='white-space:pre-wrap'>Reason: {parsed_agent.get('reason', 'Not provided')}</pre>
+        """
+        try:
+            email_result = send_email_via_ses(
+                to_email=next_of_kin_email,
+                subject=subject,
+                html_body=html_body,
+            )
+        except Exception as e:
+            email_result = {"status": "error", "error": str(e)}
     
     # Combine tracker and agent results
     return {
         "tracker_analysis": tracker_result,
         "agent_analysis": agent_response_str,
+        "agent_json": parsed_agent,
+        "email": email_result,
         "timestamp": datetime.now().isoformat()
     }
 
