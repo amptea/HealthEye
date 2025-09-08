@@ -4,12 +4,9 @@ Handles different severity levels and notification channels
 """
 
 import json
-import smtplib
 import logging
-from datetime import datetime, timedelta
-from typing import Dict, List, Optional, Tuple
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+from datetime import datetime
+from typing import Dict, List, Optional
 from dataclasses import dataclass
 from enum import Enum
 
@@ -63,12 +60,16 @@ class AlertSystem:
         """
         self.alerts = []
         self.alert_count = 0
-        self.config = self._load_config(config_file)
+        # Load config safely with defaults
+        try:
+            self.config = self._load_config(config_file)  # type: ignore[attr-defined]
+        except Exception:
+            self.config = self._default_config()
+        self._ensure_default_sections()
         self.escalation_rules = self._setup_escalation_rules()
-        
-    def _load_config(self, config_file: Optional[str]) -> Dict:
-        """Load configuration from file or use defaults"""
-        default_config = {
+
+    def _default_config(self) -> Dict:
+        return {
             "email": {
                 "enabled": False,
                 "smtp_server": "smtp.gmail.com",
@@ -90,16 +91,31 @@ class AlertSystem:
                 "enable_console": True
             }
         }
-        
+
+    def _deep_update(self, base: Dict, updates: Dict) -> Dict:
+        for k, v in updates.items():
+            if isinstance(v, dict) and isinstance(base.get(k), dict):
+                base[k] = self._deep_update(base[k], v)
+            else:
+                base[k] = v
+        return base
+
+    def _load_config(self, config_file: Optional[str]) -> Dict:
+        cfg = self._default_config()
         if config_file:
             try:
                 with open(config_file, 'r') as f:
-                    file_config = json.load(f)
-                    default_config.update(file_config)
+                    file_cfg = json.load(f)
+                cfg = self._deep_update(cfg, file_cfg)
             except Exception as e:
                 logger.warning(f"Failed to load config file {config_file}: {e}")
-        
-        return default_config
+        return cfg
+
+    def _ensure_default_sections(self) -> None:
+        defaults = self._default_config()
+        for key, value in defaults.items():
+            if key not in self.config or not isinstance(self.config.get(key), dict):
+                self.config[key] = value
     
     def _setup_escalation_rules(self) -> Dict:
         """Setup escalation rules based on severity and time"""
@@ -217,7 +233,6 @@ class AlertSystem:
     def _send_email_notification(self, alert: Alert):
         """Send email notification (Demo mode - just logs the action)"""
         try:
-            # For hackathon demo - just log that we would send email
             logger.info(f"📧 DEMO: Would send email notification for alert {alert.id}")
             logger.info(f"📧 DEMO: Subject: 🚨 {alert.severity.value.upper()} ALERT - Elderly Home Monitoring")
             logger.info(f"📧 DEMO: To: Next of kin for resident {alert.resident_id}")
@@ -386,35 +401,6 @@ class AlertSystem:
 if __name__ == "__main__":
     # Initialize alert system
     alert_system = AlertSystem()
-    
-    # Create test alerts
-    alert1 = alert_system.create_alert(
-        resident_id="RES001",
-        dwelling_type="3-room",
-        region="North East Region",
-        description="Ang Mo Kio",
-        severity="critical",
-        message="Extremely low electricity usage detected - potential medical emergency",
-        recommendations=[
-            "Immediate welfare check required",
-            "Contact emergency services if no response",
-            "Check if resident is conscious and mobile"
-        ]
-    )
-    
-    alert2 = alert_system.create_alert(
-        resident_id="RES002",
-        dwelling_type="1-room / 2-room",
-        region="Central Region",
-        description="Bishan",
-        severity="high",
-        message="Unusually high gas usage detected",
-        recommendations=[
-            "Check for appliance malfunction",
-            "Verify resident is safe",
-            "Schedule maintenance check"
-        ]
-    )
     
     # Get summary
     summary = alert_system.get_alert_summary()

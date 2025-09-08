@@ -1,8 +1,7 @@
 {
-    "monitoring": {
-        "check_interval_minutes": 60,
-        "batch_size": 10,
-        "enable_auto_alerts": true
+    "core_memory": {
+        "backend": "file",
+        "path": "data/core_memory.json"
     },
     "residents": {
         "default_dwelling_type": "3-room",
@@ -14,25 +13,5 @@
         "critical_gas_low": 0.5,
         "high_electricity_multiplier": 2.0,
         "high_gas_multiplier": 2.0
-    },
-    "email": {
-        "enabled": false,
-        "smtp_server": "smtp.gmail.com",
-        "smtp_port": 587,
-        "username": "",
-        "password": "",
-        "from_address": "",
-        "to_addresses": []
-    },
-    "escalation": {
-        "critical_timeout_minutes": 15,
-        "high_timeout_minutes": 60,
-        "medium_timeout_minutes": 240,
-        "max_escalation_levels": 3
-    },
-    "notifications": {
-        "enable_email": true,
-        "enable_logging": true,
-        "enable_console": true
     }
 }

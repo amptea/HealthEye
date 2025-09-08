@@ -1,7 +1,11 @@
 # Elderly Home Monitoring System - Usage Guide
 
 ## Overview
-This system monitors daily electricity and gas usage for elderly residents to detect potential medical emergencies. It uses historical data from Amazon Bedrock Knowledge Base and advanced anomaly detection to identify unusual usage patterns.
+This system monitors daily electricity and gas usage for elderly residents and decides whether to notify caregivers using an agentic process that combines deterministic checks and LLM reasoning on Amazon Bedrock. It uses:
+- Knowledge Base retrieval for location/dwelling historical norms
+- Statistical anomaly detection for daily usage
+- Snooze (core memory) and resident profiles
+- An escalation and acknowledgement loop with visible state
 
 ## Key Features
 - **Real-time Monitoring**: Track daily usage patterns
@@ -17,22 +21,19 @@ This system monitors daily electricity and gas usage for elderly residents to de
 pip install -r requirements.txt
 ```
 
-### 2. Configure Knowledge Base
-- Ensure your Bedrock Knowledge Base is synced with the updated metadata
-- Update `KNOWLEDGE_BASE_ID` in `src/test_agent.py` if needed
+### 2. Configure Knowledge Base (optional for demo)
+- Ensure your Bedrock Knowledge Base is synced with your data if you want live retrieval
+- Set `KNOWLEDGE_BASE_ID` via environment variable if different from the code default
 
-### 3. Run the System
+### 3. Run the Demo App
 ```bash
-python main.py
+streamlit run streamlit_app.py
 ```
 
 ## Usage Options
 
-### 1. Run Example Scenarios
-Tests the system with predefined scenarios:
-- Normal usage pattern
-- Extremely low usage (potential emergency)
-- High usage (potential concern)
+### 1. Analyze Single Reading
+Enter a reading and see the agent combine KB retrieval and anomaly detection to decide status, severity, and recommendations.
 
 ### 2. Add Manual Reading
 Manually input usage data for a resident:
@@ -41,14 +42,14 @@ Manually input usage data for a resident:
 - Gas usage (kWh)
 - Location details (optional)
 
-### 3. Continuous Monitoring
-Start automated monitoring with configurable intervals.
+### 3. Alerts Page (Escalation & Ack Loop)
+See pending alerts, acknowledge/resolve/escalate them, and observe the visible state transitions and escalation levels.
 
-### 4. Dashboard
-View current system status, alerts, and usage summaries.
+### 4. Resident Snooze (Core Memory)
+Set snooze windows per resident to suspend notifications during known absences. Active snoozes are listed and can be cleared.
 
-### 5. Export Data
-Export all monitoring data to files for analysis.
+### 5. Analysis Process Demo
+Shows the three-step agent flow: KB retrieval, anomaly detection, and consolidation into a single decision.
 
 ## Alert Levels
 
@@ -121,37 +122,28 @@ result = monitor.add_usage_reading(
 dashboard = monitor.get_monitoring_dashboard()
 ```
 
-### Command Line
+### Command Line (optional)
+You can still use the CLI for scenarios/monitoring if desired:
 ```bash
-# Run scenarios
 python src/elderly_monitor.py --scenarios
-
-# Start monitoring
 python src/elderly_monitor.py --monitor --interval 30
-
-# Show dashboard
 python src/elderly_monitor.py --dashboard
-
-# Export data
 python src/elderly_monitor.py --export exports/
 ```
 
 ## Troubleshooting
 
 ### No Historical Data Found
-- Ensure Knowledge Base is synced with updated metadata
-- Check if location data matches exactly (case-sensitive)
-- Verify CSV files are properly uploaded to S3
+- Ensure `data/2324_combined.csv` exists
+- Check if location fields match exactly (case-sensitive)
 
 ### Alerts Not Triggering
 - Check threshold settings in `config.json`
 - Verify anomaly detection is working with test data
 - Review alert system configuration
 
-### Email Notifications Not Working
-- Configure SMTP settings in `config.json`
-- Enable email notifications in config
-- Check credentials and server settings
+### Email Notifications
+- In the demo, email is simulated via logs/messages and not actually sent
 
 ## Monitoring Best Practices
 

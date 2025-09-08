@@ -1,6 +1,5 @@
 import pandas as pd
 import json
-import numpy as np
 from datetime import datetime
 from strands import tool
 
@@ -12,7 +11,7 @@ def detect_anomaly(daily_usage_json: str) -> str:
     """
     Enhanced anomaly detection for elderly home monitoring - DAILY USAGE ANALYSIS.
     daily_usage_json: JSON string with keys:
-        "dwelling_type", "region", "description", "electricity_per_month", "gas_per_month", "date" (optional)
+        "dwelling_type", "region", "description", "electricity_per_day", "gas_per_day", "date" (optional)
     Note: electricity_per_month and gas_per_month should contain DAILY usage values for comparison
     Returns JSON string with status, severity, and detailed reason comparing daily usage.
     """
@@ -29,8 +28,8 @@ def detect_anomaly(daily_usage_json: str) -> str:
     dwelling = daily_usage.get("dwelling_type")
     region = daily_usage.get("region")
     description = daily_usage.get("description", "")
-    electricity_daily = daily_usage.get("electricity_per_month")  # This is actually daily usage
-    gas_daily = daily_usage.get("gas_per_month")  # This is actually daily usage
+    electricity_daily = daily_usage.get("electricity_per_day")  
+    gas_daily = daily_usage.get("gas_per_day") 
     date = daily_usage.get("date", datetime.now().strftime("%Y-%m-%d"))
 
     # Validate inputs
@@ -38,7 +37,7 @@ def detect_anomaly(daily_usage_json: str) -> str:
         return json.dumps({
             "status": "alert",
             "severity": "high",
-            "reason": "Missing required fields: dwelling_type, region, electricity_per_month, gas_per_month",
+            "reason": "Missing required fields: dwelling_type, region, electricity_per_day, gas_per_day",
             "recommendations": ["Ensure all required fields are provided"]
         })
 
@@ -58,7 +57,6 @@ def detect_anomaly(daily_usage_json: str) -> str:
             "recommendations": ["Check if location data is correct", "Consider using broader region data"]
         })
 
-    # Convert historical monthly data to daily averages for comparison
     elec_monthly = df_filtered["electricity_per_month"].dropna()
     gas_monthly = df_filtered["gas_per_month"].dropna()
     

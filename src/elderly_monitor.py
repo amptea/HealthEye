@@ -278,6 +278,7 @@ class ElderlyMonitor:
             from strands.models.bedrock import BedrockModel
             from anomaly_tool import detect_anomaly
             import os
+            from detect_kb import detect_anomaly_with_kb
             
             # Set up Bedrock model
             bedrock_model = BedrockModel(
@@ -348,7 +349,7 @@ class ElderlyMonitor:
             
             # Initialize agent
             agent = Agent(
-                tools=[retrieve, detect_anomaly], 
+                tools=[retrieve, detect_anomaly_with_kb], 
                 model=bedrock_model,
                 system_prompt=system_prompt
             )
