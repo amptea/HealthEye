@@ -4,9 +4,6 @@
 # Ignore virtuual environment
 venv/
 
-# Config file
-config.json
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

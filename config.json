@@ -1,0 +1,33 @@
+{
+    "core_memory": {
+        "backend": "file",
+        "path": "data/core_memory.json"
+    },
+    "residents": {
+        "default_dwelling_type": "3-room",
+        "default_region": "North East Region",
+        "default_description": "Ang Mo Kio"
+    },
+    "thresholds": {
+        "critical_electricity_low": 2.0,
+        "critical_gas_low": 0.5,
+        "high_electricity_multiplier": 2.0,
+        "high_gas_multiplier": 2.0
+    },
+    "email": {
+        "enabled": true,
+        "smtp_server": "smtp.gmail.com",
+        "smtp_port": 587,
+        "username": "<ADD ADDRESS",
+        "password": "<ADD 16 Digit App Password",
+        "from_address": "<ADD ADDRESS>@gmail.com", 
+        "to_addresses": [
+            "<ADD ADDRESS>@gmail.com"
+        ]
+    },
+    "notifications": {
+        "enable_email": true,
+        "enable_logging": true,
+        "enable_console": true
+    }
+}
