@@ -8,7 +8,7 @@ import logging
 import schedule
 import time
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Callable, Dict, List, Optional
 from pathlib import Path
 import json as _json
 import os
@@ -130,40 +130,34 @@ class ElderlyMonitor:
         return self._core_memory.get_profile(resident_id)
     
     def add_usage_reading(self, 
-                         resident_id: str,
-                         electricity_kwh: float,
-                         gas_kwh: float,
-                         dwelling_type: Optional[str] = None,
-                         region: Optional[str] = None,
-                         description: Optional[str] = None,
-                         date: Optional[str] = None,
-                         notes: Optional[str] = None) -> Dict:
+                      resident_id: str,
+                      electricity_kwh: float,
+                      gas_kwh: float,
+                      dwelling_type: Optional[str] = None,
+                      region: Optional[str] = None,
+                      description: Optional[str] = None,
+                      date: Optional[str] = None,
+                      notes: Optional[str] = None,
+                      progress_callback: Optional[Callable[[str], None]] = None) -> Dict:
         """
-        Add a usage reading and perform analysis using both Strands agent and anomaly tool
-        
-        Args:
-            resident_id: Resident identifier
-            electricity_kwh: Daily electricity usage
-            gas_kwh: Daily gas usage
-            dwelling_type: Type of dwelling (uses default if not provided)
-            region: Region (uses default if not provided)
-            description: Specific location (uses default if not provided)
-            date: Date (defaults to today)
-            notes: Optional notes
-            
-        Returns:
-            Analysis results with alerts if any
+        Add a usage reading and perform analysis using both Strands agent and anomaly tool.
+        Supports progress updates via progress_callback.
         """
+
+        def notify(msg: str):
+            if progress_callback:
+                progress_callback(msg)
+
         # Use defaults if not provided
         profile = self.get_resident_profile(resident_id) if resident_id else None
         dwelling_type = dwelling_type or (profile or {}).get("dwelling_type") or self.config["residents"]["default_dwelling_type"]
         region = region or (profile or {}).get("region") or self.config["residents"]["default_region"]
         description = description or (profile or {}).get("description") or self.config["residents"]["default_description"]
-        
+
         # Check for snooze first
         snooze = self._is_snoozed(resident_id, date)
         if snooze:
-            # Return snoozed result without analysis
+            notify("Resident is in snooze window, skipping analysis")
             return {
                 "resident_id": resident_id,
                 "timestamp": datetime.now().isoformat(),
@@ -198,8 +192,9 @@ class ElderlyMonitor:
                 "alerts_created": [],
                 "alert_count": 0
             }
-        
-        # Add to tracker
+
+        # Step 1: Add to tracker
+        notify("Adding daily usage record to tracker...")
         tracker_result = self.tracker.add_daily_usage(
             dwelling_type=dwelling_type,
             region=region,
@@ -210,24 +205,43 @@ class ElderlyMonitor:
             resident_id=resident_id,
             notes=notes
         )
-        
-        # Get Strands agent analysis
+
+        # Step 2: Run AI/agent analysis
+        notify("Running AI agent analysis...")
         agent_analysis = self._get_agent_analysis(
             resident_id, dwelling_type, region, description, 
             electricity_kwh, gas_kwh, date
         )
-        
-        # Merge agent analysis with tracker result
+
+        # Merge agent analysis
         if agent_analysis:
             tracker_result["analysis"].update(agent_analysis)
-        
-        # Check for alerts
+
+        # Step 3: Add statistics block if missing
+        if "statistics" not in tracker_result["analysis"]:
+            tracker_result["analysis"]["statistics"] = {
+                "electricity": {
+                    "current_daily": electricity_kwh,
+                    "historical_daily_avg": tracker_result.get("historical_avg_electricity"),
+                    "deviation_percent": tracker_result.get("electricity_deviation_percent")
+                },
+                "gas": {
+                    "current_daily": gas_kwh,
+                    "historical_daily_avg": tracker_result.get("historical_avg_gas"),
+                    "deviation_percent": tracker_result.get("gas_deviation_percent")
+                }
+            }
+
+        # Step 4: Check for alerts
         alerts_created = []
         if self.config["monitoring"]["enable_auto_alerts"]:
+            notify("Checking for alerts...")
             alerts_created = self._check_and_create_alerts(
                 resident_id, dwelling_type, region, description, tracker_result
             )
-        
+
+        notify("Finalizing analysis result...")
+
         return {
             "resident_id": resident_id,
             "timestamp": datetime.now().isoformat(),
@@ -235,6 +249,7 @@ class ElderlyMonitor:
             "alerts_created": alerts_created,
             "alert_count": len(alerts_created)
         }
+
     
     def _check_and_create_alerts(self, 
                                 resident_id: str,
@@ -288,7 +303,7 @@ class ElderlyMonitor:
     
     def _get_agent_analysis(self, resident_id: str, dwelling_type: str, region: str, 
                            description: str, electricity_kwh: float, gas_kwh: float, 
-                           date: Optional[str]) -> Optional[Dict]:
+                           date: Optional[str], progress_callback=None) -> Optional[Dict]:
         """Get analysis from Strands agent using both retrieve and anomaly tools"""
         try:
             # Import here to avoid circular imports
@@ -297,11 +312,17 @@ class ElderlyMonitor:
             from strands.models.bedrock import BedrockModel
             from anomaly_tool import detect_anomaly
             
+            if progress_callback:
+                progress_callback("Initializing AI agent and tools...")
+            
             # Set up Bedrock model
             bedrock_model = BedrockModel(
                 model_id="arn:aws:bedrock:us-east-1:805455449713:inference-profile/us.amazon.nova-premier-v1:0",
                 temperature=0.2
             )
+            
+            if progress_callback:
+                progress_callback("Tools initialized, starting knowledge base queries...") 
         
             
             # System prompt for elderly monitoring
@@ -396,10 +417,16 @@ class ElderlyMonitor:
             Provide your analysis in the specified JSON format with detailed statistics and clear analysis summary showing both KB retrieval and anomaly detection results.
             """
             
+            if progress_callback:
+                progress_callback("Executing agent analysis with Bedrock...")
+
             # Get agent analysis
             logger.info(f"🔍 Starting Agent Analysis - Step 1: KB Retrieval & Generation, Step 2: Anomaly Detection")
             logger.info(f"📊 Tools: retrieve (for KB queries) + detect_anomaly (for statistical analysis)")
             agent_response = agent(user_message)
+            
+            if progress_callback:
+                progress_callback("Processing agent response...")
             
             # Try to parse JSON response
             try:
@@ -430,6 +457,8 @@ class ElderlyMonitor:
                 
         except Exception as e:
             logger.error(f"Agent analysis failed: {e}")
+            if progress_callback:
+                progress_callback(f"Analysis failed: {str(e)}")
             return None
 
 
