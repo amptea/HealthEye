@@ -1,0 +1,27 @@
+{
+  "csv": {
+    "embeddingAttributes": [
+      "Dwelling Type",
+      "Year",
+      "Month",
+      "Region",
+      "Description",
+      "electricity_per_month",
+      "gas_per_month"
+    ],
+    "metadataAttributes": [
+      "Dwelling Type",
+      "Year",
+      "Month",
+      "Region",
+      "Description"
+    ],
+    "index_id": [
+      "Dwelling Type",
+      "Year",
+      "Month",
+      "Region",
+      "Description"
+    ]
+  }
+}

@@ -1,0 +1,865 @@
+Dwelling Type,Year,Month,Region,Description,electricity_per_month,gas_per_month
+1-room / 2-room,2023,1,Central Region,Bishan,123,4
+1-room / 2-room,2023,1,Central Region,Bishan,123,47
+1-room / 2-room,2023,1,Central Region,Bishan,11,4
+1-room / 2-room,2023,1,Central Region,Bishan,11,47
+1-room / 2-room,2023,1,East Region,Bedok,156,3
+1-room / 2-room,2023,1,East Region,Bedok,156,39
+1-room / 2-room,2023,1,East Region,Bedok,14,3
+1-room / 2-room,2023,1,East Region,Bedok,14,39
+1-room / 2-room,2023,1,North East Region,Ang Mo Kio,164,3
+1-room / 2-room,2023,1,North East Region,Ang Mo Kio,164,40
+1-room / 2-room,2023,1,North East Region,Ang Mo Kio,15,3
+1-room / 2-room,2023,1,North East Region,Ang Mo Kio,15,40
+1-room / 2-room,2023,1,West Region,Bukit Batok,147,2
+1-room / 2-room,2023,1,West Region,Bukit Batok,147,28
+1-room / 2-room,2023,1,West Region,Bukit Batok,14,2
+1-room / 2-room,2023,1,West Region,Bukit Batok,14,28
+1-room / 2-room,2023,2,Central Region,Bishan,109,50
+1-room / 2-room,2023,2,East Region,Bedok,143,39
+1-room / 2-room,2023,2,North East Region,Ang Mo Kio,162,44
+1-room / 2-room,2023,2,West Region,Bukit Batok,138,29
+1-room / 2-room,2023,3,Central Region,Bishan,107,37
+1-room / 2-room,2023,3,East Region,Bedok,134,39
+1-room / 2-room,2023,3,North East Region,Ang Mo Kio,147,41
+1-room / 2-room,2023,3,West Region,Bukit Batok,130,29
+1-room / 2-room,2023,4,Central Region,Bishan,128,42
+1-room / 2-room,2023,4,East Region,Bedok,164,42
+1-room / 2-room,2023,4,North East Region,Ang Mo Kio,171,43
+1-room / 2-room,2023,4,West Region,Bukit Batok,163,30
+1-room / 2-room,2023,5,Central Region,Bishan,120,44
+1-room / 2-room,2023,5,East Region,Bedok,172,38
+1-room / 2-room,2023,5,North East Region,Ang Mo Kio,188,41
+1-room / 2-room,2023,5,West Region,Bukit Batok,170,28
+1-room / 2-room,2023,6,Central Region,Bishan,180,30
+1-room / 2-room,2023,6,East Region,Bedok,185,36
+1-room / 2-room,2023,6,North East Region,Ang Mo Kio,201,42
+1-room / 2-room,2023,6,West Region,Bukit Batok,195,28
+1-room / 2-room,2023,7,Central Region,Bishan,148,34
+1-room / 2-room,2023,7,East Region,Bedok,179,40
+1-room / 2-room,2023,7,North East Region,Ang Mo Kio,195,39
+1-room / 2-room,2023,7,West Region,Bukit Batok,168,27
+1-room / 2-room,2023,8,Central Region,Bishan,146,44
+1-room / 2-room,2023,8,East Region,Bedok,174,38
+1-room / 2-room,2023,8,North East Region,Ang Mo Kio,198,42
+1-room / 2-room,2023,8,West Region,Bukit Batok,178,29
+1-room / 2-room,2023,9,Central Region,Bishan,152,54
+1-room / 2-room,2023,9,East Region,Bedok,172,40
+1-room / 2-room,2023,9,North East Region,Ang Mo Kio,183,40
+1-room / 2-room,2023,9,West Region,Bukit Batok,176,28
+1-room / 2-room,2023,10,Central Region,Bishan,152,46
+1-room / 2-room,2023,10,East Region,Bedok,177,34
+1-room / 2-room,2023,10,North East Region,Ang Mo Kio,196,41
+1-room / 2-room,2023,10,West Region,Bukit Batok,186,27
+1-room / 2-room,2023,11,Central Region,Bishan,153,47
+1-room / 2-room,2023,11,East Region,Bedok,172,38
+1-room / 2-room,2023,11,North East Region,Ang Mo Kio,192,40
+1-room / 2-room,2023,11,West Region,Bukit Batok,172,28
+1-room / 2-room,2023,12,Central Region,Bishan,134,45
+1-room / 2-room,2023,12,East Region,Bedok,155,36
+1-room / 2-room,2023,12,North East Region,Ang Mo Kio,174,38
+1-room / 2-room,2023,12,West Region,Bukit Batok,155,28
+1-room / 2-room,2024,1,Central Region,Bishan,142,4
+1-room / 2-room,2024,1,Central Region,Bishan,142,47
+1-room / 2-room,2024,1,Central Region,Bishan,13,4
+1-room / 2-room,2024,1,Central Region,Bishan,13,47
+1-room / 2-room,2024,1,East Region,Bedok,158,3
+1-room / 2-room,2024,1,East Region,Bedok,158,38
+1-room / 2-room,2024,1,East Region,Bedok,15,3
+1-room / 2-room,2024,1,East Region,Bedok,15,38
+1-room / 2-room,2024,1,North East Region,Ang Mo Kio,167,3
+1-room / 2-room,2024,1,North East Region,Ang Mo Kio,167,40
+1-room / 2-room,2024,1,North East Region,Ang Mo Kio,16,3
+1-room / 2-room,2024,1,North East Region,Ang Mo Kio,16,40
+1-room / 2-room,2024,1,West Region,Bukit Batok,154,2
+1-room / 2-room,2024,1,West Region,Bukit Batok,154,29
+1-room / 2-room,2024,1,West Region,Bukit Batok,15,2
+1-room / 2-room,2024,1,West Region,Bukit Batok,15,29
+1-room / 2-room,2024,2,Central Region,Bishan,129,56
+1-room / 2-room,2024,2,East Region,Bedok,156,38
+1-room / 2-room,2024,2,North East Region,Ang Mo Kio,175,42
+1-room / 2-room,2024,2,West Region,Bukit Batok,164,31
+1-room / 2-room,2024,3,Central Region,Bishan,147,49
+1-room / 2-room,2024,3,East Region,Bedok,173,40
+1-room / 2-room,2024,3,North East Region,Ang Mo Kio,170,40
+1-room / 2-room,2024,3,West Region,Bukit Batok,162,29
+1-room / 2-room,2024,4,Central Region,Bishan,184,42
+1-room / 2-room,2024,4,East Region,Bedok,190,39
+1-room / 2-room,2024,4,North East Region,Ang Mo Kio,208,43
+1-room / 2-room,2024,4,West Region,Bukit Batok,199,40
+1-room / 2-room,2024,5,Central Region,Bishan,160,48
+1-room / 2-room,2024,5,East Region,Bedok,183,54
+1-room / 2-room,2024,5,North East Region,Ang Mo Kio,195,42
+1-room / 2-room,2024,5,West Region,Bukit Batok,182,25
+1-room / 2-room,2024,6,Central Region,Bishan,179,39
+1-room / 2-room,2024,6,East Region,Bedok,185,31
+1-room / 2-room,2024,6,North East Region,Ang Mo Kio,202,41
+1-room / 2-room,2024,6,West Region,Bukit Batok,188,26
+3-room,2023,1,Central Region,Bishan,241,4
+3-room,2023,1,Central Region,Bishan,241,54
+3-room,2023,1,Central Region,Bishan,21,4
+3-room,2023,1,Central Region,Bishan,21,54
+3-room,2023,1,East Region,Bedok,246,5
+3-room,2023,1,East Region,Bedok,246,56
+3-room,2023,1,East Region,Bedok,22,5
+3-room,2023,1,East Region,Bedok,22,56
+3-room,2023,1,North East Region,Ang Mo Kio,241,4
+3-room,2023,1,North East Region,Ang Mo Kio,241,52
+3-room,2023,1,North East Region,Ang Mo Kio,22,4
+3-room,2023,1,North East Region,Ang Mo Kio,22,52
+3-room,2023,1,West Region,Bukit Batok,245,4
+3-room,2023,1,West Region,Bukit Batok,245,48
+3-room,2023,1,West Region,Bukit Batok,22,4
+3-room,2023,1,West Region,Bukit Batok,22,48
+3-room,2023,2,Central Region,Bishan,214,45
+3-room,2023,2,East Region,Bedok,228,56
+3-room,2023,2,North East Region,Ang Mo Kio,232,54
+3-room,2023,2,West Region,Bukit Batok,241,52
+3-room,2023,3,Central Region,Bishan,193,46
+3-room,2023,3,East Region,Bedok,218,55
+3-room,2023,3,North East Region,Ang Mo Kio,226,55
+3-room,2023,3,West Region,Bukit Batok,225,50
+3-room,2023,4,Central Region,Bishan,236,49
+3-room,2023,4,East Region,Bedok,258,59
+3-room,2023,4,North East Region,Ang Mo Kio,258,57
+3-room,2023,4,West Region,Bukit Batok,268,52
+3-room,2023,5,Central Region,Bishan,285,48
+3-room,2023,5,East Region,Bedok,285,55
+3-room,2023,5,North East Region,Ang Mo Kio,286,52
+3-room,2023,5,West Region,Bukit Batok,285,50
+3-room,2023,6,Central Region,Bishan,269,48
+3-room,2023,6,East Region,Bedok,301,54
+3-room,2023,6,North East Region,Ang Mo Kio,301,51
+3-room,2023,6,West Region,Bukit Batok,298,43
+3-room,2023,7,Central Region,Bishan,263,45
+3-room,2023,7,East Region,Bedok,287,55
+3-room,2023,7,North East Region,Ang Mo Kio,294,54
+3-room,2023,7,West Region,Bukit Batok,272,44
+3-room,2023,8,Central Region,Bishan,266,48
+3-room,2023,8,East Region,Bedok,278,56
+3-room,2023,8,North East Region,Ang Mo Kio,288,54
+3-room,2023,8,West Region,Bukit Batok,286,47
+3-room,2023,9,Central Region,Bishan,248,44
+3-room,2023,9,East Region,Bedok,277,55
+3-room,2023,9,North East Region,Ang Mo Kio,273,52
+3-room,2023,9,West Region,Bukit Batok,284,49
+3-room,2023,10,Central Region,Bishan,287,49
+3-room,2023,10,East Region,Bedok,283,53
+3-room,2023,10,North East Region,Ang Mo Kio,294,55
+3-room,2023,10,West Region,Bukit Batok,293,49
+3-room,2023,11,Central Region,Bishan,259,45
+3-room,2023,11,East Region,Bedok,276,53
+3-room,2023,11,North East Region,Ang Mo Kio,272,51
+3-room,2023,11,West Region,Bukit Batok,270,48
+3-room,2023,12,Central Region,Bishan,242,44
+3-room,2023,12,East Region,Bedok,246,51
+3-room,2023,12,North East Region,Ang Mo Kio,248,49
+3-room,2023,12,West Region,Bukit Batok,247,46
+3-room,2024,1,Central Region,Bishan,217,4
+3-room,2024,1,Central Region,Bishan,217,42
+3-room,2024,1,Central Region,Bishan,22,4
+3-room,2024,1,Central Region,Bishan,22,42
+3-room,2024,1,East Region,Bedok,243,5
+3-room,2024,1,East Region,Bedok,243,54
+3-room,2024,1,East Region,Bedok,23,5
+3-room,2024,1,East Region,Bedok,23,54
+3-room,2024,1,North East Region,Ang Mo Kio,237,4
+3-room,2024,1,North East Region,Ang Mo Kio,237,51
+3-room,2024,1,North East Region,Ang Mo Kio,23,4
+3-room,2024,1,North East Region,Ang Mo Kio,23,51
+3-room,2024,1,West Region,Bukit Batok,246,4
+3-room,2024,1,West Region,Bukit Batok,246,47
+3-room,2024,1,West Region,Bukit Batok,23,4
+3-room,2024,1,West Region,Bukit Batok,23,47
+3-room,2024,2,Central Region,Bishan,242,44
+3-room,2024,2,East Region,Bedok,241,54
+3-room,2024,2,North East Region,Ang Mo Kio,250,54
+3-room,2024,2,West Region,Bukit Batok,262,53
+3-room,2024,3,Central Region,Bishan,261,52
+3-room,2024,3,East Region,Bedok,280,58
+3-room,2024,3,North East Region,Ang Mo Kio,260,53
+3-room,2024,3,West Region,Bukit Batok,262,46
+3-room,2024,4,Central Region,Bishan,279,53
+3-room,2024,4,East Region,Bedok,305,69
+3-room,2024,4,North East Region,Ang Mo Kio,305,57
+3-room,2024,4,West Region,Bukit Batok,312,70
+3-room,2024,5,Central Region,Bishan,272,38
+3-room,2024,5,East Region,Bedok,281,66
+3-room,2024,5,North East Region,Ang Mo Kio,285,56
+3-room,2024,5,West Region,Bukit Batok,289,49
+3-room,2024,6,Central Region,Bishan,278,45
+3-room,2024,6,East Region,Bedok,284,50
+3-room,2024,6,North East Region,Ang Mo Kio,285,49
+3-room,2024,6,West Region,Bukit Batok,286,45
+4-room,2023,1,Central Region,Bishan,340,5
+4-room,2023,1,Central Region,Bishan,340,63
+4-room,2023,1,Central Region,Bishan,30,5
+4-room,2023,1,Central Region,Bishan,30,63
+4-room,2023,1,East Region,Bedok,332,6
+4-room,2023,1,East Region,Bedok,332,67
+4-room,2023,1,East Region,Bedok,30,6
+4-room,2023,1,East Region,Bedok,30,67
+4-room,2023,1,North East Region,Ang Mo Kio,313,6
+4-room,2023,1,North East Region,Ang Mo Kio,313,66
+4-room,2023,1,North East Region,Ang Mo Kio,29,6
+4-room,2023,1,North East Region,Ang Mo Kio,29,66
+4-room,2023,1,West Region,Bukit Batok,327,5
+4-room,2023,1,West Region,Bukit Batok,327,54
+4-room,2023,1,West Region,Bukit Batok,30,5
+4-room,2023,1,West Region,Bukit Batok,30,54
+4-room,2023,2,Central Region,Bishan,315,67
+4-room,2023,2,East Region,Bedok,320,69
+4-room,2023,2,North East Region,Ang Mo Kio,309,71
+4-room,2023,2,West Region,Bukit Batok,332,61
+4-room,2023,3,Central Region,Bishan,293,60
+4-room,2023,3,East Region,Bedok,293,69
+4-room,2023,3,North East Region,Ang Mo Kio,293,71
+4-room,2023,3,West Region,Bukit Batok,309,63
+4-room,2023,4,Central Region,Bishan,345,62
+4-room,2023,4,East Region,Bedok,341,70
+4-room,2023,4,North East Region,Ang Mo Kio,339,71
+4-room,2023,4,West Region,Bukit Batok,355,61
+4-room,2023,5,Central Region,Bishan,409,63
+4-room,2023,5,East Region,Bedok,400,66
+4-room,2023,5,North East Region,Ang Mo Kio,376,66
+4-room,2023,5,West Region,Bukit Batok,388,56
+4-room,2023,6,Central Region,Bishan,398,54
+4-room,2023,6,East Region,Bedok,405,66
+4-room,2023,6,North East Region,Ang Mo Kio,399,64
+4-room,2023,6,West Region,Bukit Batok,407,56
+4-room,2023,7,Central Region,Bishan,389,59
+4-room,2023,7,East Region,Bedok,389,66
+4-room,2023,7,North East Region,Ang Mo Kio,382,66
+4-room,2023,7,West Region,Bukit Batok,370,55
+4-room,2023,8,Central Region,Bishan,389,61
+4-room,2023,8,East Region,Bedok,387,68
+4-room,2023,8,North East Region,Ang Mo Kio,378,68
+4-room,2023,8,West Region,Bukit Batok,388,57
+4-room,2023,9,Central Region,Bishan,388,62
+4-room,2023,9,East Region,Bedok,377,67
+4-room,2023,9,North East Region,Ang Mo Kio,354,66
+4-room,2023,9,West Region,Bukit Batok,385,58
+4-room,2023,10,Central Region,Bishan,398,60
+4-room,2023,10,East Region,Bedok,385,65
+4-room,2023,10,North East Region,Ang Mo Kio,388,68
+4-room,2023,10,West Region,Bukit Batok,394,56
+4-room,2023,11,Central Region,Bishan,377,60
+4-room,2023,11,East Region,Bedok,381,64
+4-room,2023,11,North East Region,Ang Mo Kio,359,62
+4-room,2023,11,West Region,Bukit Batok,369,57
+4-room,2023,12,Central Region,Bishan,343,58
+4-room,2023,12,East Region,Bedok,346,62
+4-room,2023,12,North East Region,Ang Mo Kio,321,62
+4-room,2023,12,West Region,Bukit Batok,335,54
+4-room,2024,1,Central Region,Bishan,326,5
+4-room,2024,1,Central Region,Bishan,326,60
+4-room,2024,1,Central Region,Bishan,31,5
+4-room,2024,1,Central Region,Bishan,31,60
+4-room,2024,1,East Region,Bedok,317,6
+4-room,2024,1,East Region,Bedok,317,64
+4-room,2024,1,East Region,Bedok,31,6
+4-room,2024,1,East Region,Bedok,31,64
+4-room,2024,1,North East Region,Ang Mo Kio,313,6
+4-room,2024,1,North East Region,Ang Mo Kio,313,65
+4-room,2024,1,North East Region,Ang Mo Kio,30,6
+4-room,2024,1,North East Region,Ang Mo Kio,30,65
+4-room,2024,1,West Region,Bukit Batok,334,5
+4-room,2024,1,West Region,Bukit Batok,334,55
+4-room,2024,1,West Region,Bukit Batok,31,5
+4-room,2024,1,West Region,Bukit Batok,31,55
+4-room,2024,2,Central Region,Bishan,336,63
+4-room,2024,2,East Region,Bedok,334,66
+4-room,2024,2,North East Region,Ang Mo Kio,330,71
+4-room,2024,2,West Region,Bukit Batok,357,58
+4-room,2024,3,Central Region,Bishan,366,63
+4-room,2024,3,East Region,Bedok,390,73
+4-room,2024,3,North East Region,Ang Mo Kio,339,69
+4-room,2024,3,West Region,Bukit Batok,359,62
+4-room,2024,4,Central Region,Bishan,403,61
+4-room,2024,4,East Region,Bedok,409,76
+4-room,2024,4,North East Region,Ang Mo Kio,405,72
+4-room,2024,4,West Region,Bukit Batok,423,72
+4-room,2024,5,Central Region,Bishan,402,59
+4-room,2024,5,East Region,Bedok,384,82
+4-room,2024,5,North East Region,Ang Mo Kio,374,69
+4-room,2024,5,West Region,Bukit Batok,391,53
+4-room,2024,6,Central Region,Bishan,395,52
+4-room,2024,6,East Region,Bedok,390,61
+4-room,2024,6,North East Region,Ang Mo Kio,379,63
+4-room,2024,6,West Region,Bukit Batok,391,54
+5-room and Executive,2023,1,Central Region,Bishan,417,6
+5-room and Executive,2023,1,Central Region,Bishan,417,73
+5-room and Executive,2023,1,Central Region,Bishan,37,6
+5-room and Executive,2023,1,Central Region,Bishan,37,73
+5-room and Executive,2023,1,East Region,Bedok,401,6
+5-room and Executive,2023,1,East Region,Bedok,401,72
+5-room and Executive,2023,1,East Region,Bedok,36,6
+5-room and Executive,2023,1,East Region,Bedok,36,72
+5-room and Executive,2023,1,North East Region,Ang Mo Kio,375,6
+5-room and Executive,2023,1,North East Region,Ang Mo Kio,375,70
+5-room and Executive,2023,1,North East Region,Ang Mo Kio,35,6
+5-room and Executive,2023,1,North East Region,Ang Mo Kio,35,70
+5-room and Executive,2023,1,West Region,Bukit Batok,387,6
+5-room and Executive,2023,1,West Region,Bukit Batok,387,64
+5-room and Executive,2023,1,West Region,Bukit Batok,36,6
+5-room and Executive,2023,1,West Region,Bukit Batok,36,64
+5-room and Executive,2023,2,Central Region,Bishan,388,78
+5-room and Executive,2023,2,East Region,Bedok,389,75
+5-room and Executive,2023,2,North East Region,Ang Mo Kio,373,75
+5-room and Executive,2023,2,West Region,Bukit Batok,399,73
+5-room and Executive,2023,3,Central Region,Bishan,361,72
+5-room and Executive,2023,3,East Region,Bedok,355,74
+5-room and Executive,2023,3,North East Region,Ang Mo Kio,352,79
+5-room and Executive,2023,3,West Region,Bukit Batok,374,75
+5-room and Executive,2023,4,Central Region,Bishan,417,74
+5-room and Executive,2023,4,East Region,Bedok,414,76
+5-room and Executive,2023,4,North East Region,Ang Mo Kio,408,77
+5-room and Executive,2023,4,West Region,Bukit Batok,426,73
+5-room and Executive,2023,5,Central Region,Bishan,490,74
+5-room and Executive,2023,5,East Region,Bedok,481,70
+5-room and Executive,2023,5,North East Region,Ang Mo Kio,453,70
+5-room and Executive,2023,5,West Region,Bukit Batok,468,67
+5-room and Executive,2023,6,Central Region,Bishan,490,63
+5-room and Executive,2023,6,East Region,Bedok,489,71
+5-room and Executive,2023,6,North East Region,Ang Mo Kio,479,66
+5-room and Executive,2023,6,West Region,Bukit Batok,484,66
+5-room and Executive,2023,7,Central Region,Bishan,472,68
+5-room and Executive,2023,7,East Region,Bedok,465,70
+5-room and Executive,2023,7,North East Region,Ang Mo Kio,460,68
+5-room and Executive,2023,7,West Region,Bukit Batok,447,66
+5-room and Executive,2023,8,Central Region,Bishan,476,74
+5-room and Executive,2023,8,East Region,Bedok,466,73
+5-room and Executive,2023,8,North East Region,Ang Mo Kio,457,73
+5-room and Executive,2023,8,West Region,Bukit Batok,464,68
+5-room and Executive,2023,9,Central Region,Bishan,474,73
+5-room and Executive,2023,9,East Region,Bedok,448,72
+5-room and Executive,2023,9,North East Region,Ang Mo Kio,430,70
+5-room and Executive,2023,9,West Region,Bukit Batok,458,70
+5-room and Executive,2023,10,Central Region,Bishan,481,71
+5-room and Executive,2023,10,East Region,Bedok,468,71
+5-room and Executive,2023,10,North East Region,Ang Mo Kio,467,73
+5-room and Executive,2023,10,West Region,Bukit Batok,475,68
+5-room and Executive,2023,11,Central Region,Bishan,460,70
+5-room and Executive,2023,11,East Region,Bedok,458,70
+5-room and Executive,2023,11,North East Region,Ang Mo Kio,431,67
+5-room and Executive,2023,11,West Region,Bukit Batok,447,71
+5-room and Executive,2023,12,Central Region,Bishan,414,68
+5-room and Executive,2023,12,East Region,Bedok,408,67
+5-room and Executive,2023,12,North East Region,Ang Mo Kio,389,66
+5-room and Executive,2023,12,West Region,Bukit Batok,400,64
+5-room and Executive,2024,1,Central Region,Bishan,403,6
+5-room and Executive,2024,1,Central Region,Bishan,403,70
+5-room and Executive,2024,1,Central Region,Bishan,38,6
+5-room and Executive,2024,1,Central Region,Bishan,38,70
+5-room and Executive,2024,1,East Region,Bedok,384,6
+5-room and Executive,2024,1,East Region,Bedok,384,68
+5-room and Executive,2024,1,East Region,Bedok,37,6
+5-room and Executive,2024,1,East Region,Bedok,37,68
+5-room and Executive,2024,1,North East Region,Ang Mo Kio,378,6
+5-room and Executive,2024,1,North East Region,Ang Mo Kio,378,69
+5-room and Executive,2024,1,North East Region,Ang Mo Kio,36,6
+5-room and Executive,2024,1,North East Region,Ang Mo Kio,36,69
+5-room and Executive,2024,1,West Region,Bukit Batok,394,6
+5-room and Executive,2024,1,West Region,Bukit Batok,394,66
+5-room and Executive,2024,1,West Region,Bukit Batok,38,6
+5-room and Executive,2024,1,West Region,Bukit Batok,38,66
+5-room and Executive,2024,2,Central Region,Bishan,415,76
+5-room and Executive,2024,2,East Region,Bedok,406,71
+5-room and Executive,2024,2,North East Region,Ang Mo Kio,402,77
+5-room and Executive,2024,2,West Region,Bukit Batok,428,72
+5-room and Executive,2024,3,Central Region,Bishan,445,76
+5-room and Executive,2024,3,East Region,Bedok,467,79
+5-room and Executive,2024,3,North East Region,Ang Mo Kio,414,74
+5-room and Executive,2024,3,West Region,Bukit Batok,435,76
+5-room and Executive,2024,4,Central Region,Bishan,498,74
+5-room and Executive,2024,4,East Region,Bedok,496,82
+5-room and Executive,2024,4,North East Region,Ang Mo Kio,487,77
+5-room and Executive,2024,4,West Region,Bukit Batok,512,85
+5-room and Executive,2024,5,Central Region,Bishan,487,68
+5-room and Executive,2024,5,East Region,Bedok,466,87
+5-room and Executive,2024,5,North East Region,Ang Mo Kio,454,70
+5-room and Executive,2024,5,West Region,Bukit Batok,469,63
+5-room and Executive,2024,6,Central Region,Bishan,478,63
+5-room and Executive,2024,6,East Region,Bedok,470,65
+5-room and Executive,2024,6,North East Region,Ang Mo Kio,462,66
+5-room and Executive,2024,6,West Region,Bukit Batok,465,64
+Landed Properties,2023,1,Central Region,Bishan,788,8
+Landed Properties,2023,1,Central Region,Bishan,788,88
+Landed Properties,2023,1,Central Region,Bishan,70,8
+Landed Properties,2023,1,Central Region,Bishan,70,88
+Landed Properties,2023,1,East Region,Bedok,947,10
+Landed Properties,2023,1,East Region,Bedok,947,124
+Landed Properties,2023,1,East Region,Bedok,86,10
+Landed Properties,2023,1,East Region,Bedok,86,124
+Landed Properties,2023,1,North East Region,Ang Mo Kio,790,10
+Landed Properties,2023,1,North East Region,Ang Mo Kio,790,110
+Landed Properties,2023,1,North East Region,Ang Mo Kio,72,10
+Landed Properties,2023,1,North East Region,Ang Mo Kio,72,110
+Landed Properties,2023,1,West Region,Bukit Batok,800,7
+Landed Properties,2023,1,West Region,Bukit Batok,800,73
+Landed Properties,2023,1,West Region,Bukit Batok,76,7
+Landed Properties,2023,1,West Region,Bukit Batok,76,73
+Landed Properties,2023,2,Central Region,Bishan,772,99
+Landed Properties,2023,2,East Region,Bedok,885,132
+Landed Properties,2023,2,North East Region,Ang Mo Kio,740,113
+Landed Properties,2023,2,West Region,Bukit Batok,843,92
+Landed Properties,2023,3,Central Region,Bishan,683,86
+Landed Properties,2023,3,East Region,Bedok,879,125
+Landed Properties,2023,3,North East Region,Ang Mo Kio,748,130
+Landed Properties,2023,3,West Region,Bukit Batok,839,110
+Landed Properties,2023,4,Central Region,Bishan,781,102
+Landed Properties,2023,4,East Region,Bedok,988,127
+Landed Properties,2023,4,North East Region,Ang Mo Kio,804,124
+Landed Properties,2023,4,West Region,Bukit Batok,867,88
+Landed Properties,2023,5,Central Region,Bishan,957,88
+Landed Properties,2023,5,East Region,Bedok,1035,117
+Landed Properties,2023,5,North East Region,Ang Mo Kio,983,105
+Landed Properties,2023,5,West Region,Bukit Batok,944,77
+Landed Properties,2023,6,Central Region,Bishan,857,97
+Landed Properties,2023,6,East Region,Bedok,1144,106
+Landed Properties,2023,6,North East Region,Ang Mo Kio,900,113
+Landed Properties,2023,6,West Region,Bukit Batok,1047,90
+Landed Properties,2023,7,Central Region,Bishan,903,93
+Landed Properties,2023,7,East Region,Bedok,1096,113
+Landed Properties,2023,7,North East Region,Ang Mo Kio,878,113
+Landed Properties,2023,7,West Region,Bukit Batok,904,83
+Landed Properties,2023,8,Central Region,Bishan,883,88
+Landed Properties,2023,8,East Region,Bedok,1114,116
+Landed Properties,2023,8,North East Region,Ang Mo Kio,914,112
+Landed Properties,2023,8,West Region,Bukit Batok,939,92
+Landed Properties,2023,9,Central Region,Bishan,852,87
+Landed Properties,2023,9,East Region,Bedok,1091,120
+Landed Properties,2023,9,North East Region,Ang Mo Kio,900,109
+Landed Properties,2023,9,West Region,Bukit Batok,1000,94
+Landed Properties,2023,10,Central Region,Bishan,935,106
+Landed Properties,2023,10,East Region,Bedok,1116,127
+Landed Properties,2023,10,North East Region,Ang Mo Kio,946,108
+Landed Properties,2023,10,West Region,Bukit Batok,987,91
+Landed Properties,2023,11,Central Region,Bishan,891,82
+Landed Properties,2023,11,East Region,Bedok,1088,122
+Landed Properties,2023,11,North East Region,Ang Mo Kio,890,131
+Landed Properties,2023,11,West Region,Bukit Batok,975,88
+Landed Properties,2023,12,Central Region,Bishan,817,98
+Landed Properties,2023,12,East Region,Bedok,978,121
+Landed Properties,2023,12,North East Region,Ang Mo Kio,822,118
+Landed Properties,2023,12,West Region,Bukit Batok,864,91
+Landed Properties,2024,1,Central Region,Bishan,718,8
+Landed Properties,2024,1,Central Region,Bishan,718,83
+Landed Properties,2024,1,Central Region,Bishan,72,8
+Landed Properties,2024,1,Central Region,Bishan,72,83
+Landed Properties,2024,1,East Region,Bedok,941,11
+Landed Properties,2024,1,East Region,Bedok,941,118
+Landed Properties,2024,1,East Region,Bedok,89,11
+Landed Properties,2024,1,East Region,Bedok,89,118
+Landed Properties,2024,1,North East Region,Ang Mo Kio,762,10
+Landed Properties,2024,1,North East Region,Ang Mo Kio,762,107
+Landed Properties,2024,1,North East Region,Ang Mo Kio,74,10
+Landed Properties,2024,1,North East Region,Ang Mo Kio,74,107
+Landed Properties,2024,1,West Region,Bukit Batok,800,7
+Landed Properties,2024,1,West Region,Bukit Batok,800,79
+Landed Properties,2024,1,West Region,Bukit Batok,79,7
+Landed Properties,2024,1,West Region,Bukit Batok,79,79
+Landed Properties,2024,2,Central Region,Bishan,813,97
+Landed Properties,2024,2,East Region,Bedok,978,132
+Landed Properties,2024,2,North East Region,Ang Mo Kio,810,116
+Landed Properties,2024,2,West Region,Bukit Batok,915,86
+Landed Properties,2024,3,Central Region,Bishan,914,112
+Landed Properties,2024,3,East Region,Bedok,1023,129
+Landed Properties,2024,3,North East Region,Ang Mo Kio,977,140
+Landed Properties,2024,3,West Region,Bukit Batok,972,115
+Landed Properties,2024,4,Central Region,Bishan,946,107
+Landed Properties,2024,4,East Region,Bedok,1224,134
+Landed Properties,2024,4,North East Region,Ang Mo Kio,1051,124
+Landed Properties,2024,4,West Region,Bukit Batok,1080,107
+Landed Properties,2024,5,Central Region,Bishan,880,86
+Landed Properties,2024,5,East Region,Bedok,1124,143
+Landed Properties,2024,5,North East Region,Ang Mo Kio,862,125
+Landed Properties,2024,5,West Region,Bukit Batok,971,64
+Landed Properties,2024,6,Central Region,Bishan,916,100
+Landed Properties,2024,6,East Region,Bedok,1095,104
+Landed Properties,2024,6,North East Region,Ang Mo Kio,859,123
+Landed Properties,2024,6,West Region,Bukit Batok,964,83
+Overall,2023,1,Central Region,Bishan,405,6
+Overall,2023,1,Central Region,Bishan,405,73
+Overall,2023,1,Central Region,Bishan,37,6
+Overall,2023,1,Central Region,Bishan,37,73
+Overall,2023,1,East Region,Bedok,410,6
+Overall,2023,1,East Region,Bedok,410,71
+Overall,2023,1,East Region,Bedok,38,6
+Overall,2023,1,East Region,Bedok,38,71
+Overall,2023,1,North East Region,Ang Mo Kio,324,5
+Overall,2023,1,North East Region,Ang Mo Kio,324,63
+Overall,2023,1,North East Region,Ang Mo Kio,30,5
+Overall,2023,1,North East Region,Ang Mo Kio,30,63
+Overall,2023,1,West Region,Bukit Batok,334,5
+Overall,2023,1,West Region,Bukit Batok,334,62
+Overall,2023,1,West Region,Bukit Batok,31,5
+Overall,2023,1,West Region,Bukit Batok,31,62
+Overall,2023,2,Central Region,Bishan,382,78
+Overall,2023,2,East Region,Bedok,391,74
+Overall,2023,2,North East Region,Ang Mo Kio,315,66
+Overall,2023,2,West Region,Bukit Batok,334,70
+Overall,2023,3,Central Region,Bishan,349,74
+Overall,2023,3,East Region,Bedok,377,75
+Overall,2023,3,North East Region,Ang Mo Kio,305,68
+Overall,2023,3,West Region,Bukit Batok,318,72
+Overall,2023,4,Central Region,Bishan,408,75
+Overall,2023,4,East Region,Bedok,433,76
+Overall,2023,4,North East Region,Ang Mo Kio,345,69
+Overall,2023,4,West Region,Bukit Batok,364,70
+Overall,2023,5,Central Region,Bishan,501,72
+Overall,2023,5,East Region,Bedok,482,68
+Overall,2023,5,North East Region,Ang Mo Kio,399,62
+Overall,2023,5,West Region,Bukit Batok,390,63
+Overall,2023,6,Central Region,Bishan,478,64
+Overall,2023,6,East Region,Bedok,514,68
+Overall,2023,6,North East Region,Ang Mo Kio,403,60
+Overall,2023,6,West Region,Bukit Batok,429,61
+Overall,2023,7,Central Region,Bishan,479,67
+Overall,2023,7,East Region,Bedok,484,67
+Overall,2023,7,North East Region,Ang Mo Kio,391,62
+Overall,2023,7,West Region,Bukit Batok,380,61
+Overall,2023,8,Central Region,Bishan,471,71
+Overall,2023,8,East Region,Bedok,485,71
+Overall,2023,8,North East Region,Ang Mo Kio,390,65
+Overall,2023,8,West Region,Bukit Batok,391,64
+Overall,2023,9,Central Region,Bishan,463,72
+Overall,2023,9,East Region,Bedok,476,72
+Overall,2023,9,North East Region,Ang Mo Kio,372,62
+Overall,2023,9,West Region,Bukit Batok,396,65
+Overall,2023,10,Central Region,Bishan,496,73
+Overall,2023,10,East Region,Bedok,489,70
+Overall,2023,10,North East Region,Ang Mo Kio,400,65
+Overall,2023,10,West Region,Bukit Batok,409,66
+Overall,2023,11,Central Region,Bishan,472,71
+Overall,2023,11,East Region,Bedok,479,69
+Overall,2023,11,North East Region,Ang Mo Kio,372,60
+Overall,2023,11,West Region,Bukit Batok,382,65
+Overall,2023,12,Central Region,Bishan,429,69
+Overall,2023,12,East Region,Bedok,428,66
+Overall,2023,12,North East Region,Ang Mo Kio,339,59
+Overall,2023,12,West Region,Bukit Batok,336,61
+Overall,2024,1,Central Region,Bishan,380,6
+Overall,2024,1,Central Region,Bishan,380,68
+Overall,2024,1,Central Region,Bishan,38,6
+Overall,2024,1,Central Region,Bishan,38,68
+Overall,2024,1,East Region,Bedok,403,6
+Overall,2024,1,East Region,Bedok,403,69
+Overall,2024,1,East Region,Bedok,39,6
+Overall,2024,1,East Region,Bedok,39,69
+Overall,2024,1,North East Region,Ang Mo Kio,320,5
+Overall,2024,1,North East Region,Ang Mo Kio,320,62
+Overall,2024,1,North East Region,Ang Mo Kio,31,5
+Overall,2024,1,North East Region,Ang Mo Kio,31,62
+Overall,2024,1,West Region,Bukit Batok,339,6
+Overall,2024,1,West Region,Bukit Batok,339,63
+Overall,2024,1,West Region,Bukit Batok,32,6
+Overall,2024,1,West Region,Bukit Batok,32,63
+Overall,2024,2,Central Region,Bishan,416,74
+Overall,2024,2,East Region,Bedok,420,71
+Overall,2024,2,North East Region,Ang Mo Kio,339,67
+Overall,2024,2,West Region,Bukit Batok,361,69
+Overall,2024,3,Central Region,Bishan,471,79
+Overall,2024,3,East Region,Bedok,473,76
+Overall,2024,3,North East Region,Ang Mo Kio,371,64
+Overall,2024,3,West Region,Bukit Batok,361,70
+Overall,2024,4,Central Region,Bishan,498,75
+Overall,2024,4,East Region,Bedok,532,80
+Overall,2024,4,North East Region,Ang Mo Kio,424,68
+Overall,2024,4,West Region,Bukit Batok,441,79
+Overall,2024,5,Central Region,Bishan,485,66
+Overall,2024,5,East Region,Bedok,491,85
+Overall,2024,5,North East Region,Ang Mo Kio,380,68
+Overall,2024,5,West Region,Bukit Batok,402,59
+Overall,2024,6,Central Region,Bishan,490,64
+Overall,2024,6,East Region,Bedok,484,63
+Overall,2024,6,North East Region,Ang Mo Kio,385,60
+Overall,2024,6,West Region,Bukit Batok,397,58
+Private Apartments and Condominiums,2023,1,Central Region,Bishan,388,8
+Private Apartments and Condominiums,2023,1,Central Region,Bishan,388,93
+Private Apartments and Condominiums,2023,1,Central Region,Bishan,38,8
+Private Apartments and Condominiums,2023,1,Central Region,Bishan,38,93
+Private Apartments and Condominiums,2023,1,East Region,Bedok,420,8
+Private Apartments and Condominiums,2023,1,East Region,Bedok,420,90
+Private Apartments and Condominiums,2023,1,East Region,Bedok,40,8
+Private Apartments and Condominiums,2023,1,East Region,Bedok,40,90
+Private Apartments and Condominiums,2023,1,North East Region,Ang Mo Kio,416,7
+Private Apartments and Condominiums,2023,1,North East Region,Ang Mo Kio,416,91
+Private Apartments and Condominiums,2023,1,North East Region,Ang Mo Kio,41,7
+Private Apartments and Condominiums,2023,1,North East Region,Ang Mo Kio,41,91
+Private Apartments and Condominiums,2023,1,West Region,Bukit Batok,402,7
+Private Apartments and Condominiums,2023,1,West Region,Bukit Batok,402,78
+Private Apartments and Condominiums,2023,1,West Region,Bukit Batok,37,7
+Private Apartments and Condominiums,2023,1,West Region,Bukit Batok,37,78
+Private Apartments and Condominiums,2023,2,Central Region,Bishan,370,98
+Private Apartments and Condominiums,2023,2,East Region,Bedok,408,98
+Private Apartments and Condominiums,2023,2,North East Region,Ang Mo Kio,412,93
+Private Apartments and Condominiums,2023,2,West Region,Bukit Batok,389,89
+Private Apartments and Condominiums,2023,3,Central Region,Bishan,338,101
+Private Apartments and Condominiums,2023,3,East Region,Bedok,404,104
+Private Apartments and Condominiums,2023,3,North East Region,Ang Mo Kio,404,99
+Private Apartments and Condominiums,2023,3,West Region,Bukit Batok,384,90
+Private Apartments and Condominiums,2023,4,Central Region,Bishan,399,100
+Private Apartments and Condominiums,2023,4,East Region,Bedok,461,99
+Private Apartments and Condominiums,2023,4,North East Region,Ang Mo Kio,446,102
+Private Apartments and Condominiums,2023,4,West Region,Bukit Batok,438,88
+Private Apartments and Condominiums,2023,5,Central Region,Bishan,529,85
+Private Apartments and Condominiums,2023,5,East Region,Bedok,516,81
+Private Apartments and Condominiums,2023,5,North East Region,Ang Mo Kio,591,87
+Private Apartments and Condominiums,2023,5,West Region,Bukit Batok,446,77
+Private Apartments and Condominiums,2023,6,Central Region,Bishan,493,81
+Private Apartments and Condominiums,2023,6,East Region,Bedok,562,82
+Private Apartments and Condominiums,2023,6,North East Region,Ang Mo Kio,534,76
+Private Apartments and Condominiums,2023,6,West Region,Bukit Batok,559,72
+Private Apartments and Condominiums,2023,7,Central Region,Bishan,509,82
+Private Apartments and Condominiums,2023,7,East Region,Bedok,513,79
+Private Apartments and Condominiums,2023,7,North East Region,Ang Mo Kio,525,81
+Private Apartments and Condominiums,2023,7,West Region,Bukit Batok,462,72
+Private Apartments and Condominiums,2023,8,Central Region,Bishan,484,84
+Private Apartments and Condominiums,2023,8,East Region,Bedok,516,88
+Private Apartments and Condominiums,2023,8,North East Region,Ang Mo Kio,532,93
+Private Apartments and Condominiums,2023,8,West Region,Bukit Batok,453,76
+Private Apartments and Condominiums,2023,9,Central Region,Bishan,472,90
+Private Apartments and Condominiums,2023,9,East Region,Bedok,511,94
+Private Apartments and Condominiums,2023,9,North East Region,Ang Mo Kio,516,86
+Private Apartments and Condominiums,2023,9,West Region,Bukit Batok,482,79
+Private Apartments and Condominiums,2023,10,Central Region,Bishan,536,95
+Private Apartments and Condominiums,2023,10,East Region,Bedok,528,92
+Private Apartments and Condominiums,2023,10,North East Region,Ang Mo Kio,543,87
+Private Apartments and Condominiums,2023,10,West Region,Bukit Batok,504,83
+Private Apartments and Condominiums,2023,11,Central Region,Bishan,511,92
+Private Apartments and Condominiums,2023,11,East Region,Bedok,517,89
+Private Apartments and Condominiums,2023,11,North East Region,Ang Mo Kio,502,84
+Private Apartments and Condominiums,2023,11,West Region,Bukit Batok,467,79
+Private Apartments and Condominiums,2023,12,Central Region,Bishan,466,88
+Private Apartments and Condominiums,2023,12,East Region,Bedok,455,86
+Private Apartments and Condominiums,2023,12,North East Region,Ang Mo Kio,470,80
+Private Apartments and Condominiums,2023,12,West Region,Bukit Batok,377,75
+Private Apartments and Condominiums,2024,1,Central Region,Bishan,353,7
+Private Apartments and Condominiums,2024,1,Central Region,Bishan,353,81
+Private Apartments and Condominiums,2024,1,Central Region,Bishan,40,7
+Private Apartments and Condominiums,2024,1,Central Region,Bishan,40,81
+Private Apartments and Condominiums,2024,1,East Region,Bedok,417,8
+Private Apartments and Condominiums,2024,1,East Region,Bedok,417,90
+Private Apartments and Condominiums,2024,1,East Region,Bedok,42,8
+Private Apartments and Condominiums,2024,1,East Region,Bedok,42,90
+Private Apartments and Condominiums,2024,1,North East Region,Ang Mo Kio,398,8
+Private Apartments and Condominiums,2024,1,North East Region,Ang Mo Kio,398,88
+Private Apartments and Condominiums,2024,1,North East Region,Ang Mo Kio,42,8
+Private Apartments and Condominiums,2024,1,North East Region,Ang Mo Kio,42,88
+Private Apartments and Condominiums,2024,1,West Region,Bukit Batok,404,7
+Private Apartments and Condominiums,2024,1,West Region,Bukit Batok,404,80
+Private Apartments and Condominiums,2024,1,West Region,Bukit Batok,38,7
+Private Apartments and Condominiums,2024,1,West Region,Bukit Batok,38,80
+Private Apartments and Condominiums,2024,2,Central Region,Bishan,427,92
+Private Apartments and Condominiums,2024,2,East Region,Bedok,442,96
+Private Apartments and Condominiums,2024,2,North East Region,Ang Mo Kio,430,94
+Private Apartments and Condominiums,2024,2,West Region,Bukit Batok,412,88
+Private Apartments and Condominiums,2024,3,Central Region,Bishan,526,111
+Private Apartments and Condominiums,2024,3,East Region,Bedok,507,96
+Private Apartments and Condominiums,2024,3,North East Region,Ang Mo Kio,565,107
+Private Apartments and Condominiums,2024,3,West Region,Bukit Batok,401,82
+Private Apartments and Condominiums,2024,4,Central Region,Bishan,518,98
+Private Apartments and Condominiums,2024,4,East Region,Bedok,581,95
+Private Apartments and Condominiums,2024,4,North East Region,Ang Mo Kio,588,94
+Private Apartments and Condominiums,2024,4,West Region,Bukit Batok,549,90
+Private Apartments and Condominiums,2024,5,Central Region,Bishan,510,75
+Private Apartments and Condominiums,2024,5,East Region,Bedok,531,104
+Private Apartments and Condominiums,2024,5,North East Region,Ang Mo Kio,492,110
+Private Apartments and Condominiums,2024,5,West Region,Bukit Batok,489,73
+Private Apartments and Condominiums,2024,6,Central Region,Bishan,526,82
+Private Apartments and Condominiums,2024,6,East Region,Bedok,510,76
+Private Apartments and Condominiums,2024,6,North East Region,Ang Mo Kio,521,82
+Private Apartments and Condominiums,2024,6,West Region,Bukit Batok,465,67
+Private Housing,2023,1,Central Region,Bishan,496,8
+Private Housing,2023,1,Central Region,Bishan,496,93
+Private Housing,2023,1,Central Region,Bishan,47,8
+Private Housing,2023,1,Central Region,Bishan,47,93
+Private Housing,2023,1,East Region,Bedok,568,8
+Private Housing,2023,1,East Region,Bedok,568,92
+Private Housing,2023,1,East Region,Bedok,53,8
+Private Housing,2023,1,East Region,Bedok,53,92
+Private Housing,2023,1,North East Region,Ang Mo Kio,582,8
+Private Housing,2023,1,North East Region,Ang Mo Kio,582,92
+Private Housing,2023,1,North East Region,Ang Mo Kio,54,8
+Private Housing,2023,1,North East Region,Ang Mo Kio,54,92
+Private Housing,2023,1,West Region,Bukit Batok,447,7
+Private Housing,2023,1,West Region,Bukit Batok,447,78
+Private Housing,2023,1,West Region,Bukit Batok,42,7
+Private Housing,2023,1,West Region,Bukit Batok,42,78
+Private Housing,2023,2,Central Region,Bishan,478,98
+Private Housing,2023,2,East Region,Bedok,542,100
+Private Housing,2023,2,North East Region,Ang Mo Kio,556,94
+Private Housing,2023,2,West Region,Bukit Batok,440,90
+Private Housing,2023,3,Central Region,Bishan,430,100
+Private Housing,2023,3,East Region,Bedok,537,105
+Private Housing,2023,3,North East Region,Ang Mo Kio,556,101
+Private Housing,2023,3,West Region,Bukit Batok,435,91
+Private Housing,2023,4,Central Region,Bishan,500,100
+Private Housing,2023,4,East Region,Bedok,609,101
+Private Housing,2023,4,North East Region,Ang Mo Kio,604,104
+Private Housing,2023,4,West Region,Bukit Batok,487,88
+Private Housing,2023,5,Central Region,Bishan,643,85
+Private Housing,2023,5,East Region,Bedok,662,84
+Private Housing,2023,5,North East Region,Ang Mo Kio,764,88
+Private Housing,2023,5,West Region,Bukit Batok,502,77
+Private Housing,2023,6,Central Region,Bishan,590,82
+Private Housing,2023,6,East Region,Bedok,725,84
+Private Housing,2023,6,North East Region,Ang Mo Kio,696,79
+Private Housing,2023,6,West Region,Bukit Batok,614,73
+Private Housing,2023,7,Central Region,Bishan,614,82
+Private Housing,2023,7,East Region,Bedok,676,81
+Private Housing,2023,7,North East Region,Ang Mo Kio,680,84
+Private Housing,2023,7,West Region,Bukit Batok,511,73
+Private Housing,2023,8,Central Region,Bishan,590,84
+Private Housing,2023,8,East Region,Bedok,683,90
+Private Housing,2023,8,North East Region,Ang Mo Kio,700,95
+Private Housing,2023,8,West Region,Bukit Batok,508,78
+Private Housing,2023,9,Central Region,Bishan,574,90
+Private Housing,2023,9,East Region,Bedok,673,96
+Private Housing,2023,9,North East Region,Ang Mo Kio,686,88
+Private Housing,2023,9,West Region,Bukit Batok,540,80
+Private Housing,2023,10,Central Region,Bishan,642,95
+Private Housing,2023,10,East Region,Bedok,692,94
+Private Housing,2023,10,North East Region,Ang Mo Kio,721,89
+Private Housing,2023,10,West Region,Bukit Batok,558,84
+Private Housing,2023,11,Central Region,Bishan,613,91
+Private Housing,2023,11,East Region,Bedok,676,91
+Private Housing,2023,11,North East Region,Ang Mo Kio,673,88
+Private Housing,2023,11,West Region,Bukit Batok,523,80
+Private Housing,2023,12,Central Region,Bishan,559,88
+Private Housing,2023,12,East Region,Bedok,601,88
+Private Housing,2023,12,North East Region,Ang Mo Kio,625,83
+Private Housing,2023,12,West Region,Bukit Batok,429,76
+Private Housing,2024,1,Central Region,Bishan,450,8
+Private Housing,2024,1,Central Region,Bishan,450,82
+Private Housing,2024,1,Central Region,Bishan,48,8
+Private Housing,2024,1,Central Region,Bishan,48,82
+Private Housing,2024,1,East Region,Bedok,563,8
+Private Housing,2024,1,East Region,Bedok,563,92
+Private Housing,2024,1,East Region,Bedok,55,8
+Private Housing,2024,1,East Region,Bedok,55,92
+Private Housing,2024,1,North East Region,Ang Mo Kio,559,8
+Private Housing,2024,1,North East Region,Ang Mo Kio,559,89
+Private Housing,2024,1,North East Region,Ang Mo Kio,56,8
+Private Housing,2024,1,North East Region,Ang Mo Kio,56,89
+Private Housing,2024,1,West Region,Bukit Batok,446,7
+Private Housing,2024,1,West Region,Bukit Batok,446,80
+Private Housing,2024,1,West Region,Bukit Batok,42,7
+Private Housing,2024,1,West Region,Bukit Batok,42,80
+Private Housing,2024,2,Central Region,Bishan,530,92
+Private Housing,2024,2,East Region,Bedok,592,99
+Private Housing,2024,2,North East Region,Ang Mo Kio,598,96
+Private Housing,2024,2,West Region,Bukit Batok,466,88
+Private Housing,2024,3,Central Region,Bishan,630,111
+Private Housing,2024,3,East Region,Bedok,651,98
+Private Housing,2024,3,North East Region,Ang Mo Kio,747,111
+Private Housing,2024,3,West Region,Bukit Batok,463,84
+Private Housing,2024,4,Central Region,Bishan,632,99
+Private Housing,2024,4,East Region,Bedok,761,98
+Private Housing,2024,4,North East Region,Ang Mo Kio,792,97
+Private Housing,2024,4,West Region,Bukit Batok,606,91
+Private Housing,2024,5,Central Region,Bishan,609,76
+Private Housing,2024,5,East Region,Bedok,697,107
+Private Housing,2024,5,North East Region,Ang Mo Kio,655,112
+Private Housing,2024,5,West Region,Bukit Batok,540,72
+Private Housing,2024,6,Central Region,Bishan,630,83
+Private Housing,2024,6,East Region,Bedok,673,78
+Private Housing,2024,6,North East Region,Ang Mo Kio,670,86
+Private Housing,2024,6,West Region,Bukit Batok,519,68
+Public Housing,2023,1,Central Region,Bishan,352,67
+Public Housing,2023,1,Central Region,Bishan,352,5
+Public Housing,2023,1,Central Region,Bishan,31,67
+Public Housing,2023,1,Central Region,Bishan,31,5
+Public Housing,2023,1,East Region,Bedok,302,64
+Public Housing,2023,1,East Region,Bedok,302,5
+Public Housing,2023,1,East Region,Bedok,27,64
+Public Housing,2023,1,East Region,Bedok,27,5
+Public Housing,2023,1,North East Region,Ang Mo Kio,272,59
+Public Housing,2023,1,North East Region,Ang Mo Kio,272,5
+Public Housing,2023,1,North East Region,Ang Mo Kio,25,59
+Public Housing,2023,1,North East Region,Ang Mo Kio,25,5
+Public Housing,2023,1,West Region,Bukit Batok,300,54
+Public Housing,2023,1,West Region,Bukit Batok,300,5
+Public Housing,2023,1,West Region,Bukit Batok,28,54
+Public Housing,2023,1,West Region,Bukit Batok,28,5
+Public Housing,2023,2,Central Region,Bishan,325,71
+Public Housing,2023,2,East Region,Bedok,287,65
+Public Housing,2023,2,North East Region,Ang Mo Kio,266,62
+Public Housing,2023,2,West Region,Bukit Batok,303,60
+Public Housing,2023,3,Central Region,Bishan,302,65
+Public Housing,2023,3,East Region,Bedok,266,64
+Public Housing,2023,3,North East Region,Ang Mo Kio,254,64
+Public Housing,2023,3,West Region,Bukit Batok,282,62
+Public Housing,2023,4,Central Region,Bishan,353,66
+Public Housing,2023,4,East Region,Bedok,312,67
+Public Housing,2023,4,North East Region,Ang Mo Kio,293,64
+Public Housing,2023,4,West Region,Bukit Batok,328,61
+Public Housing,2023,5,Central Region,Bishan,417,67
+Public Housing,2023,5,East Region,Bedok,357,62
+Public Housing,2023,5,North East Region,Ang Mo Kio,325,59
+Public Housing,2023,5,West Region,Bukit Batok,356,56
+Public Housing,2023,6,Central Region,Bishan,412,57
+Public Housing,2023,6,East Region,Bedok,367,62
+Public Housing,2023,6,North East Region,Ang Mo Kio,344,57
+Public Housing,2023,6,West Region,Bukit Batok,373,55
+Public Housing,2023,7,Central Region,Bishan,399,62
+Public Housing,2023,7,East Region,Bedok,351,62
+Public Housing,2023,7,North East Region,Ang Mo Kio,332,59
+Public Housing,2023,7,West Region,Bukit Batok,340,54
+Public Housing,2023,8,Central Region,Bishan,401,66
+Public Housing,2023,8,East Region,Bedok,347,64
+Public Housing,2023,8,North East Region,Ang Mo Kio,328,61
+Public Housing,2023,8,West Region,Bukit Batok,356,57
+Public Housing,2023,9,Central Region,Bishan,398,66
+Public Housing,2023,9,East Region,Bedok,339,64
+Public Housing,2023,9,North East Region,Ang Mo Kio,309,59
+Public Housing,2023,9,West Region,Bukit Batok,353,58
+Public Housing,2023,10,Central Region,Bishan,410,64
+Public Housing,2023,10,East Region,Bedok,349,61
+Public Housing,2023,10,North East Region,Ang Mo Kio,334,62
+Public Housing,2023,10,West Region,Bukit Batok,364,56
+Public Housing,2023,11,Central Region,Bishan,388,64
+Public Housing,2023,11,East Region,Bedok,342,61
+Public Housing,2023,11,North East Region,Ang Mo Kio,310,57
+Public Housing,2023,11,West Region,Bukit Batok,340,58
+Public Housing,2023,12,Central Region,Bishan,352,61
+Public Housing,2023,12,East Region,Bedok,307,58
+Public Housing,2023,12,North East Region,Ang Mo Kio,281,55
+Public Housing,2023,12,West Region,Bukit Batok,307,54
+Public Housing,2024,1,Central Region,Bishan,338,63
+Public Housing,2024,1,Central Region,Bishan,338,5
+Public Housing,2024,1,Central Region,Bishan,32,63
+Public Housing,2024,1,Central Region,Bishan,32,5
+Public Housing,2024,1,East Region,Bedok,291,61
+Public Housing,2024,1,East Region,Bedok,291,6
+Public Housing,2024,1,East Region,Bedok,28,61
+Public Housing,2024,1,East Region,Bedok,28,6
+Public Housing,2024,1,North East Region,Ang Mo Kio,271,58
+Public Housing,2024,1,North East Region,Ang Mo Kio,271,5
+Public Housing,2024,1,North East Region,Ang Mo Kio,26,58
+Public Housing,2024,1,North East Region,Ang Mo Kio,26,5
+Public Housing,2024,1,West Region,Bukit Batok,306,55
+Public Housing,2024,1,West Region,Bukit Batok,306,5
+Public Housing,2024,1,West Region,Bukit Batok,29,55
+Public Housing,2024,1,West Region,Bukit Batok,29,5
+Public Housing,2024,2,Central Region,Bishan,349,68
+Public Housing,2024,2,East Region,Bedok,301,62
+Public Housing,2024,2,North East Region,Ang Mo Kio,286,63
+Public Housing,2024,2,West Region,Bukit Batok,328,59
+Public Housing,2024,3,Central Region,Bishan,378,68
+Public Housing,2024,3,East Region,Bedok,349,69
+Public Housing,2024,3,North East Region,Ang Mo Kio,294,61
+Public Housing,2024,3,West Region,Bukit Batok,330,62
+Public Housing,2024,4,Central Region,Bishan,418,66
+Public Housing,2024,4,East Region,Bedok,372,73
+Public Housing,2024,4,North East Region,Ang Mo Kio,349,64
+Public Housing,2024,4,West Region,Bukit Batok,390,72
+Public Housing,2024,5,Central Region,Bishan,412,62
+Public Housing,2024,5,East Region,Bedok,348,77
+Public Housing,2024,5,North East Region,Ang Mo Kio,325,62
+Public Housing,2024,5,West Region,Bukit Batok,359,53
+Public Housing,2024,6,Central Region,Bishan,407,56
+Public Housing,2024,6,East Region,Bedok,352,57
+Public Housing,2024,6,North East Region,Ang Mo Kio,328,56
+Public Housing,2024,6,West Region,Bukit Batok,359,53
